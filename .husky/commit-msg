@@ -1,0 +1,5 @@
+#!/bin/sh
+# commit-msg hook: 验证 commit message 格式
+# 使用 commitlint 检查 commit message 是否符合规范
+
+pnpm exec commitlint --edit "$1"

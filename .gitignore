@@ -1,0 +1,44 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build outputs
+dist
+build
+.turbo
+.eslintcache
+*.tsbuildinfo
+
+# Testing
+coverage
+*.log
+
+# Storybook
+storybook-static
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.tgz
+*.tar.gz
+.cache
+.temp
+pnpm-debug.log*
