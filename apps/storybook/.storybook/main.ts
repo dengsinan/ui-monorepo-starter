@@ -1,3 +1,4 @@
+import { resolve } from 'node:path';
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
@@ -9,6 +10,18 @@ const config: StorybookConfig = {
     '@storybook/addon-docs',
   ],
   framework: '@storybook/react-vite',
+  async viteFinal(config) {
+    config.resolve ??= {};
+    const existing = Array.isArray(config.resolve.alias) ? config.resolve.alias : [];
+    config.resolve.alias = [
+      ...existing,
+      {
+        find: '@dengsinan/ui',
+        replacement: resolve(process.cwd(), '../../packages/ui/src/index.ts'),
+      },
+    ];
+    return config;
+  },
 };
 
 export default config;

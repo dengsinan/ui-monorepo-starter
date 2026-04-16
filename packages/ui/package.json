@@ -1,0 +1,43 @@
+{
+  "name": "@dengsinan/ui",
+  "version": "1.0.0",
+  "description": "React 19 + Ant Design UI components package.",
+  "type": "module",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.node.json --noEmit",
+    "clean": "node --eval \"const fs = require('node:fs'); fs.rmSync('dist', { recursive: true, force: true });\""
+  },
+  "keywords": [
+    "react",
+    "antd",
+    "ui",
+    "components"
+  ],
+  "author": "dengsinan",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1",
+  "peerDependencies": {
+    "antd": "^6.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.8",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
