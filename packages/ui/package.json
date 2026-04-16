@@ -11,7 +11,8 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./style.css": "./dist/style.css"
   },
   "files": [
     "dist"
@@ -36,8 +37,15 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
     "@vitejs/plugin-react": "^6.0.1",
+    "less": "^4.6.4",
     "vite": "^8.0.8",
     "vite-plugin-dts": "^4.5.4"
+  },
+  "dependencies": {
+    "@ant-design/cssinjs": "^2.1.2",
+    "clsx": "^2.1.1",
+    "lodash-es": "^4.17.21"
   }
 }

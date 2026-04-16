@@ -20,10 +20,11 @@ export default defineConfig({
     lib: {
       entry: resolve(rootDir, 'src/index.ts'),
       fileName: 'index',
+      cssFileName: 'style',
       formats: ['es'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'antd', /^antd\/.*$/],
+      external: ['react', 'react-dom', 'antd', /^antd\/.*$/, '@ant-design/cssinjs'],
     },
   },
 });

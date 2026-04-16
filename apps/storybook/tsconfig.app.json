@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "rootDir": "../..",
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "types": ["vite/client"],
     "allowImportingTsExtensions": true,
@@ -9,7 +10,8 @@
     "erasableSyntaxOnly": true,
     "noEmit": true,
     "paths": {
-      "@dengsinan/ui": ["../../packages/ui/src/index.ts"]
+      "@dengsinan/ui": ["../../packages/ui/src/index.ts"],
+      "@dengsinan/ui/style.css": ["../../packages/ui/src/styles/index.less"]
     }
   },
   "include": ["src", "vitest.shims.d.ts", ".storybook/**/*.tsx"]

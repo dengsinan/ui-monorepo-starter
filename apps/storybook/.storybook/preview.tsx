@@ -1,6 +1,7 @@
-import type { Preview } from '@storybook/react-vite';
-import { ThemeProvider } from '@dengsinan/ui';
 import type { ThemeMode } from '@dengsinan/ui';
+import { ThemeProvider } from '@dengsinan/ui';
+import '@dengsinan/ui/style.css';
+import type { Preview } from '@storybook/react-vite';
 
 const THEME_MODES: ThemeMode[] = ['light', 'dark'];
 

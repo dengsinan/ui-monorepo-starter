@@ -1,11 +1,12 @@
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { StyleProvider } from '@ant-design/cssinjs';
 import { ConfigProvider } from 'antd';
 import type { ThemeConfig } from 'antd';
 import { ThemeModeContext, ThemeProviderContext } from './theme-context';
 import type { ThemeMode, ThemeProviderProps } from './types';
+import merge from 'lodash-es/merge';
 import defaultThemeDark from './default/default-theme-dark';
 import defaultThemeLight from './default/default-theme-light';
-import { deepMerge } from './utils/deep-merge';
 
 const NESTED_MARKER = { nested: true } as const;
 
@@ -52,7 +53,7 @@ export function ThemeProvider({
   }, [isRoot, resolvedMode]);
 
   const mergedTheme = useMemo(
-    () => deepMerge(builtinThemes[resolvedMode], theme ?? {}),
+    () => merge({}, builtinThemes[resolvedMode], theme ?? {}) as ThemeConfig,
     [resolvedMode, theme],
   );
 
@@ -61,10 +62,12 @@ export function ThemeProvider({
     [resolvedMode, setMode],
   );
 
+  const providerNode = <ConfigProvider theme={mergedTheme}>{children}</ConfigProvider>;
+
   return (
     <ThemeProviderContext.Provider value={NESTED_MARKER}>
       <ThemeModeContext.Provider value={modeContextValue}>
-        <ConfigProvider theme={mergedTheme}>{children}</ConfigProvider>
+        {isRoot ? <StyleProvider layer>{providerNode}</StyleProvider> : providerNode}
       </ThemeModeContext.Provider>
     </ThemeProviderContext.Provider>
   );

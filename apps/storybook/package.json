@@ -33,6 +33,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-storybook": "^10.3.5",
     "globals": "^17.4.0",
+    "less": "^4.6.4",
     "playwright": "^1.59.1",
     "storybook": "^10.3.5",
     "typescript": "~6.0.2",
