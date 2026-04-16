@@ -12,5 +12,5 @@
       "@dengsinan/ui": ["../../packages/ui/src/index.ts"]
     }
   },
-  "include": ["src", "vitest.shims.d.ts"]
+  "include": ["src", "vitest.shims.d.ts", ".storybook/**/*.tsx"]
 }
