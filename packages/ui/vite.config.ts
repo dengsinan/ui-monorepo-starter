@@ -24,7 +24,16 @@ export default defineConfig({
       formats: ['es'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'antd', /^antd\/.*$/, '@ant-design/cssinjs'],
+      external: [
+        'react',
+        'react-dom',
+        'react/jsx-runtime',
+        'antd',
+        /^antd\/.*$/,
+        '@ant-design/cssinjs',
+        'clsx',
+        'lodash-es/merge',
+      ],
     },
   },
 });

@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "React 19 + Ant Design UI components package.",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "source": "./src/index.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -30,6 +33,15 @@
   ],
   "author": "dengsinan",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dengsinan/ui-monorepo-starter.git",
+    "directory": "packages/ui"
+  },
+  "homepage": "https://github.com/dengsinan/ui-monorepo-starter#readme",
+  "bugs": {
+    "url": "https://github.com/dengsinan/ui-monorepo-starter/issues"
+  },
   "packageManager": "pnpm@10.13.1",
   "peerDependencies": {
     "antd": "^6.0.0",
