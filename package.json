@@ -7,6 +7,7 @@
   "scripts": {
     "prepare": "husky",
     "build": "pnpm -r --if-present build",
+    "build:ui": "pnpm --filter @dengsinan/ui build",
     "dev": "pnpm -r --parallel --if-present dev",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix --cache",
@@ -18,7 +19,8 @@
     "storybook": "pnpm --filter storybook dev",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "pnpm build && changeset publish"
+    "release": "pnpm build && changeset publish",
+    "release:ui": "pnpm --filter @dengsinan/ui build && changeset publish"
   },
   "keywords": [
     "react",
