@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "React 19 + Ant Design UI components package.",
   "type": "module",
+  "sideEffects": [
+    "**/*.css",
+    "**/*.less"
+  ],
   "publishConfig": {
     "access": "public"
   },

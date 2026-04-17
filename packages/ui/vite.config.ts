@@ -12,14 +12,12 @@ export default defineConfig({
     dts({
       entryRoot: 'src',
       insertTypesEntry: true,
-      rollupTypes: true,
       tsconfigPath: resolve(rootDir, 'tsconfig.json'),
     }),
   ],
   build: {
     lib: {
       entry: resolve(rootDir, 'src/index.ts'),
-      fileName: 'index',
       cssFileName: 'style',
       formats: ['es'],
     },
@@ -32,8 +30,13 @@ export default defineConfig({
         /^antd\/.*$/,
         '@ant-design/cssinjs',
         'clsx',
-        'lodash-es/merge',
+        /^lodash-es(\/.*)?$/,
       ],
+      output: {
+        preserveModules: true,
+        preserveModulesRoot: 'src',
+        entryFileNames: '[name].js',
+      },
     },
   },
 });
