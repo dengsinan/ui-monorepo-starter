@@ -1,6 +1,6 @@
 {
   "name": "@dengsinan/ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React 19 + Ant Design UI components package.",
   "type": "module",
   "sideEffects": [
