@@ -1,5 +1,4 @@
 ---
-'@dengsinan/storybook': patch
 '@dengsinan/ui': patch
 ---
 
