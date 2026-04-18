@@ -1,5 +1,10 @@
 #!/bin/sh
-# pre-commit hook: 在提交前运行 lint-staged 检查暂存文件
+# pre-commit hook: 在提交前运行 lint-staged 和测试
 # 如果检查失败，提交会被阻止
 
-pnpm exec lint-staged
+# 1. 运行 lint-staged 检查暂存文件
+pnpm exec lint-staged || exit 1
+
+# 2. 运行测试（只测试有变动的包）
+echo "🧪 正在运行测试..."
+pnpm --filter @dengsinan/ui test || exit 1

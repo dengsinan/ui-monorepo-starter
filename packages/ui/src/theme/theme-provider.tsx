@@ -29,12 +29,6 @@ export function ThemeProvider({
 
   const resolvedMode = controlledMode ?? internalMode;
 
-  useEffect(() => {
-    if (controlledMode !== undefined) {
-      setInternalMode(controlledMode);
-    }
-  }, [controlledMode]);
-
   const setMode = useCallback(
     (next: ThemeMode) => {
       if (controlledMode === undefined) {
